@@ -1,0 +1,13 @@
+
+@font-face {
+  font-family: 'Rotis-Sans-Regular';
+  src: url('../fonts/rotissansserif.eot');
+  src: url('../fonts/rotissansserif.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/rotissansserif.woff') format('woff'),
+  url('../fonts/rotissansserif.ttf') format('truetype'),
+  url('../fonts/rotissansserif.svg#Lucida-Sans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+

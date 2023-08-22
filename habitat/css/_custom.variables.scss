@@ -1,0 +1,73 @@
+$black: #000;
+$white: #fff;
+$color-cliente: $black;
+$color-cliente2: #E11E2B;
+$color-cliente3: #58595B;
+$color-cliente4: #8D191C;
+$color-cliente5: #D6D6D6;
+$color-cliente6: #8D191C;
+$secondary: #B4B4B4;
+$theme-colors: (
+        "cliente": $black,
+        "cliente2": $color-cliente2,
+        "cliente3": $color-cliente3,
+        "cliente4": $color-cliente4,
+        "cliente5": $color-cliente5,
+        "cliente6": $color-cliente6,
+        "white": $white,
+        "black": $black
+);
+$spacer: 1rem;
+$spacers: (
+    6: ($spacer * 4),
+    7: ($spacer * 5),
+    8: ($spacer * 6.25),
+    9: ($spacer * 7.5),
+    10: ($spacer * 9.375)
+);
+$link-color: $color-cliente;
+$enable-responsive-font-sizes: true;
+$enable-shadows: true;
+$rfs-base-font-size: 1rem;
+$font-family-base: "Montserrat", Arial, sans-serif;
+$font-weight-medium: 500;
+$display4-weight: inherit;
+$dropdown-box-shadow: 0px 4px 4px rgba($black, .25);
+$border-radius-lg: .5rem;
+$btn-font-size-lg: $rfs-base-font-size;
+$input-btn-font-size-lg: $btn-font-size-lg;
+$btn-border-radius-lg: 2px;
+$custom-select-line-height: 1;
+$input-btn-padding-x-lg: 2rem;
+$input-btn-padding-y-lg: 1rem;
+$input-padding-x: 1.5rem;
+$form-group-margin-bottom: 1.5rem;
+$input-height-lg: 3rem;
+$input-color: $black;
+$card-border-radius: 2px;
+$input-placeholder-color: $input-color;
+$dropdown-item-padding-x: 2.5rem;
+$dropdown-link-color: $color-cliente3;
+$dropdown-link-active-color: $dropdown-link-color;
+$dropdown-link-hover-color: $dropdown-link-color;
+$dropdown-link-active-bg: transparent;
+$dropdown-link-hover-bg: transparent;
+$breadcrumb-divider-color: #58595B;
+$breadcrumb-active-color: #58595B;
+$breadcrumb-divider: quote("|");
+$nav-pills-border-radius: 0;
+$nav-tabs-link-active-color: $white;
+$component-active-bg: $color-cliente2;
+$btn-disabled-opacity: .35;
+$custom-checkbox-indicator-border-radius: 2px;
+$custom-control-indicator-bg: transparent;
+$custom-control-indicator-border-color: $black;
+$custom-control-indicator-checked-bg: $color-cliente2;
+$custom-control-indicator-checked-border-color: $color-cliente2;
+$custom-select-color: $input-color;
+$custom-select-bg-size: 16px 9px;
+$custom-select-indicator-color: $black;
+@function str-replace($string, $search, $replace: "") {$index: str-index($string, $search); @if $index { @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);} @return $string;}
+$custom-select-indicator:  str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 10'%3e%3cpath fill='#{$custom-select-indicator-color}' d='M16.334 1.513a.594.594 0 0 0 .166-.42.594.594 0 0 0-.166-.42.548.548 0 0 0-.8 0L8.5 8.054 1.466.673a.548.548 0 0 0-.8 0 .615.615 0 0 0 0 .84L8.1 9.326c.22.232.58.232.8 0z'/%3e%3c/svg%3e"), "#", "%23");
+
+

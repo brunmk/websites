@@ -1,0 +1,57 @@
+
+//@function dynamic-text-color($bg-color, $location: null) {
+//  @if (lightness($bg-color) > 33) {
+//    @return #000;
+//  } @else {
+//    @if ($location == header) {
+//      @return #bbb;
+//    } @else {
+//      @return #fff;
+//    }
+//    @return #fff;
+//  }
+//}
+$bg-contraste: #292929;
+
+@function text($bg-contraste, $location: null) {
+  @if(lightness($bg-contraste) > 50) {
+    @return $black;
+  } @else {
+    @if ($location == cliente2) {
+        @return $color-cliente2;
+    } @else {
+    @return $white;
+    }
+  }
+}
+
+@mixin dc($bg-contraste) { // dc is short for dynamic color
+  background: $bg-contraste !important;
+  color: text($bg-contraste) !important;
+  a{
+    color: text($bg-contraste);
+  }
+  svg{
+    fill: text($bg-contraste);
+  }
+}
+
+body.contraste{
+  @include dc($bg-contraste);
+  .bg-light, .dropdown-menu, .dropdown-item:hover, .dropdown-item:focus, [class*=bg-]{
+    @include dc($bg-contraste);
+  }
+  footer{
+    @include dc($bg-contraste);
+  }
+  .color-cliente2, .color-cliente3, .color-cliente4{
+    color: text($bg-contraste);
+  }
+  .navbar-dark .menu .show .menu-btn:not(.navbar-toggler){
+    background-color: $bg-contraste;
+  }
+  .central .card{
+    background: none;
+  }
+}
+

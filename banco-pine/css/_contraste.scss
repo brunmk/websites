@@ -1,0 +1,57 @@
+
+//@function dynamic-text-color($bg-color, $location: null) {
+//  @if (lightness($bg-color) > 33) {
+//    @return #000;
+//  } @else {
+//    @if ($location == header) {
+//      @return #bbb;
+//    } @else {
+//      @return #fff;
+//    }
+//    @return #fff;
+//  }
+//}
+$bg-contraste: #565759;
+
+@function text($bg-contraste, $location: null) {
+  @if(lightness($bg-contraste) > 50) {
+    @return $black;
+  } @else {
+    @if ($location == cliente2) {
+        @return $color-cliente2;
+    } @else {
+    @return $white;
+    }
+  }
+}
+
+@mixin dc($bg-contraste) { // dc is short for dynamic color
+  background: $bg-contraste !important;
+  color: text($bg-contraste) !important;
+  a{
+    color: text($bg-contraste);
+  }
+  svg{
+    fill: text($bg-contraste);
+  }
+}
+
+@mixin dc2($bg-contraste) { // dc is short for dynamic color
+  color: text($bg-contraste, "cliente2");
+  a{
+    color: text($bg-contraste, "cliente2");
+  }
+  svg{
+    fill: text($bg-contraste, "cliente2");
+  }
+}
+
+
+
+body.contraste{
+  @include dc($bg-contraste);  
+  .color-cliente3, .color-cliente4{
+    color: $color-cliente2;
+    font-weight: $font-weight-bold;
+  }
+}
